@@ -21,14 +21,14 @@ cd Vortex
 
 ### 2. HGNN-based Prediction
 
-Job execution time prediction using heterogeneous graph neural networks:
+Job execution time [prediction](model/README.md) using heterogeneous graph neural networks:
 ```bash
 cd model
 ```
 
 ### 3. Scheduling Process
 
-Deploy and run the Vortex scheduler:
+Deploy and run the Vortex [scheduler](scheduler/README.md):
 
 ```bash
 cd scheduler
