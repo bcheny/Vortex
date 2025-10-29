@@ -25,11 +25,11 @@ This work proposes a heterogeneous GraphSAGE-based model that learns from the co
 **Dependencies:**
 
 ```
-dgl
-torch
-pandas
-numpy
-scikit-learn
+dgl==2.4.0+cu121
+torch==2.4.0
+pandas==2.3.2
+numpy==1.26.4
+scikit-learn==1.5.2
 ```
 
 Install DGL following the [official installation guide](https://www.dgl.ai/pages/start.html) based on your platform and CUDA version.
@@ -98,3 +98,4 @@ python main.py 42 64 2 0.2
 ```
 
 Results will be saved in the `results/` directory.
+
