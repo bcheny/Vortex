@@ -8,12 +8,6 @@ This repository contains the source code for the paper:
 
 ---
 
-## Table of Contents
-- [HGNN-based Prediction](#HGNN-based Prediction)  
-- [Scheduling Process](#Scheduling Process)  
-
----
-
 ## Usage
 
 ### 1. Quick Start
