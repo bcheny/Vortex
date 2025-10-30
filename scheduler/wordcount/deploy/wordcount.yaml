@@ -1,0 +1,28 @@
+apiVersion: batch.volcano.sh/v1alpha1
+kind: Job
+metadata:
+  name: wordcount-job
+spec:
+  minAvailable: 3
+  schedulerName: volcano
+  policies:
+    - event: PodFailed
+      action: RestartJob
+  tasks:
+    - replicas: 3
+      name: completion-task
+      policies:
+      - event: TaskCompleted
+        action: CompleteJob
+      template:
+        spec:
+          containers:
+            - command: ["/bin/bash", "-c", "python main.py"]
+              image: slldocker/my-wordcount-app:latest
+              name: wordcount-container
+              resources:
+                requests:
+                  cpu: 1
+                limits:
+                  cpu: 1
+          restartPolicy: Never
