@@ -1,0 +1,28 @@
+apiVersion: batch.volcano.sh/v1alpha1
+kind: Job
+metadata:
+  name: pagerank-job
+spec:
+  minAvailable: 3
+  schedulerName: volcano
+  policies:
+    - event: PodFailed
+      action: RestartJob
+  tasks:
+    - replicas: 3
+      name: pagerank-task
+      policies:
+      - event: TaskCompleted
+        action: CompleteJob
+      template:
+        spec:
+          containers:
+            - command: ["/bin/bash", "-c", "python main.py"]
+              image: slldocker/pagerank:latest
+              name: pagerank-container
+              resources:
+                requests:
+                  cpu: 1
+                limits:
+                  cpu: 1
+          restartPolicy: Never
