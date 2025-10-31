@@ -12,7 +12,7 @@ This project implements two typical computational tasks—WordCount and PageRank
 
 #### 1. Deploy the Karmada
 
-`Karmada` Version: **v1.15**
+`Karmada` Version: **v1.15.0**
 
 ##### Prerequisites
 
